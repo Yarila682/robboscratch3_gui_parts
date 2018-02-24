@@ -1,0 +1,37 @@
+
+#sensor-pallete{
+
+    margin-left: 50%;
+    margin-top: 20%;
+
+}
+
+.btn-trigger-extension-pack{
+
+    margin-top: 20%;
+    display: block;
+
+
+}
+
+.btn-trigger-sensor-choose-window{
+
+
+  margin-top: 21%;
+  display: block;
+
+}
+
+#robot-sensors{
+
+    display: inline-block;
+
+}
+
+
+#laboratory-sensors{
+
+    display: inline-block;
+    margin-left: 5%;
+
+}
