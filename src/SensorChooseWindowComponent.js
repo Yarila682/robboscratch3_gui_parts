@@ -71,8 +71,8 @@ class SensorChooseWindowComponent extends Component {
 
                                   (element,index) => {
 
-                                      console.log("element: " + element);
-                                    //    return  (element !== "temperature")
+                                    //  console.log("element: " + element);
+                                        return  (element !== "temperature")
                                   }
 
                               );

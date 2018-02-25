@@ -70,7 +70,7 @@ class SensorPallete extends Component {
 
             {
 
-             this.props.lab_sensors.map((sensor, index) =>
+             this.props.lab_external_sensors.map((sensor, index) =>
 
                   {
 
@@ -115,7 +115,7 @@ class SensorPallete extends Component {
 const mapStateToProps =  state => ({
 
       robot_sensors: state.robot_sensors,
-      lab_sensors:  state.lab_sensors,
+      lab_external_sensors:  state.lab_external_sensors,
       sensors_choose_window: state.sensors_choose_window
   });
 
