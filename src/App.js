@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SensorPallete from './SensorPallete';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+import RobboGui from './RobboGui';
+
 
 class App extends Component {
 
@@ -9,7 +13,7 @@ class App extends Component {
 //  console.log(this.props.tracks);
   return (
 
-          <SensorPallete/>
+          <RobboGui/>
   );
 }
 
@@ -30,4 +34,4 @@ class App extends Component {
 //   mapDispatchToProps
 // )(App);
 
-export default App;
+export default  DragDropContext(HTML5Backend)(App);

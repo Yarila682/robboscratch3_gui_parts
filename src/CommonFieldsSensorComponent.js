@@ -15,7 +15,7 @@ class CommonFieldsSensorComponent extends Component {
         <div className="sensor_block_field" >
             <div className="sensor_block_field">
 
-                  {`sensor ${this.props.sensorId+1} : `}
+                  {`${this.props.NameFieldText} `}
 
             </div>
             <div className="sensor_block_field">

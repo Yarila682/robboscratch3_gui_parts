@@ -21,7 +21,7 @@ class SensorPallete extends Component {
   triggerSensorChooseWindow(){
 
       console.log("triggerSensorChooseWindow()");
-      this.props.onTriggerSensorChooseWindow();
+      this.props.onTriggerSensorChooseWindow(0);
 
   }
 
@@ -31,16 +31,26 @@ class SensorPallete extends Component {
 
       <div id="sensor-pallete">
 
+
+
           <div id="robot-sensors">
+
+              <div id="robot-sensors-tittle" className="sensor-panel-tittle"> Robot   </div>
+
             {
 
-             this.props.sensors.map((sensor, index) =>
+             this.props.robot_sensors.map((sensor, index) =>
 
                   {
 
+                    let sensorPictureUrl = `/assets/16/${sensor.sensor_device_name}_sensor_${sensor.sensor_name}.png`;
 
 
-                    return   <SensorComponent key={index} index={index} sensorId={sensor.sensor_id} isSensorVersionNew={sensor.is_sensor_version_new} />
+
+                    return   <SensorComponent key={index} index={index} sensorId={sensor.sensor_id} isSensorVersionNew={sensor.is_sensor_version_new}
+                                sensorPictureUrl={sensorPictureUrl}
+                                deviceName={sensor.sensor_device_name} sensorType={sensor.sensor_type}
+                                sensorFieldText={sensor.sensor_field_text}/>
 
 
 
@@ -55,15 +65,25 @@ class SensorPallete extends Component {
           </div>
 
           <div id = "laboratory-sensors">
+
+            <div id="laboratory-sensors-tittle" className="sensor-panel-tittle">Laboratory   </div>
+
             {
 
-             this.props.sensors.map((sensor, index) =>
+             this.props.lab_sensors.map((sensor, index) =>
 
                   {
 
 
 
-                    return   <SensorComponent key={index} index={index} sensorId={sensor.sensor_id} isSensorVersionNew={sensor.is_sensor_version_new} />
+                    let sensorPictureUrl = `/assets/16/${sensor.sensor_device_name}_sensor_${sensor.sensor_name}.png`;
+
+
+
+                    return   <SensorComponent key={index} index={index} sensorId={sensor.sensor_id} isSensorVersionNew={sensor.is_sensor_version_new}
+                                sensorPictureUrl={sensorPictureUrl}
+                                deviceName={sensor.sensor_device_name} sensorType={sensor.sensor_type}
+                                sensorFieldText={sensor.sensor_field_text}/>
 
 
 
@@ -79,7 +99,7 @@ class SensorPallete extends Component {
           </div>
 
 
-            <SensorChooseWindowComponent isShowing={this.props.sensors_choose_window.sensors_choose_window_showing}/>
+
 
 
             <button className="btn-trigger-extension-pack" onClick = {this.triggerExtensionPack.bind(this)}>Trigger extension pack   </button>
@@ -94,7 +114,8 @@ class SensorPallete extends Component {
 
 const mapStateToProps =  state => ({
 
-      sensors: state.sensors,
+      robot_sensors: state.robot_sensors,
+      lab_sensors:  state.lab_sensors,
       sensors_choose_window: state.sensors_choose_window
   });
 
@@ -105,9 +126,9 @@ const mapDispatchToProps = dispatch => ({
       dispatch(ActionTriggerExtensionPack());
     },
 
-     onTriggerSensorChooseWindow: () => {
+     onTriggerSensorChooseWindow: (sensor_caller_id) => {
 
-         dispatch(ActionTriggerSensorChooseWindow());
+         dispatch(ActionTriggerSensorChooseWindow(sensor_caller_id));
        },
 
 

@@ -2,9 +2,9 @@
 
 z-index: 10;
 /*background-color: #AAAAAA;*/
-position: fixed;
+/*position: absolute;
 top:40%;
-left:20%;
+left:20%;*/
 
 border: 2px outset rgba(0,0,0,0.5);
 
@@ -17,6 +17,15 @@ box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
 
 
     display: block;
+
+}
+
+.sensor-choose-window.window-show.window-drag{
+
+
+        opacity:  0.5;
+        cursor: move;
+        background-color: yellow;
 
 }
 

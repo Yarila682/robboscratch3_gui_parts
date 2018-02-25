@@ -16,7 +16,7 @@ class OldVersionSensorComponent extends Component {
 
         <div>
 
-            <CommonFieldsSensorComponent sensorId={this.props.sensorId} />
+            <CommonFieldsSensorComponent NameFieldText={`${this.props.fieldText}`} sensorId={this.props.sensorId} />
 
             <div className="sensor_block_field">
 

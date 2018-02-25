@@ -1,6 +1,6 @@
 
-var sensor_types = ["SENSOR_TYPE_ANALOG","SENSOR_TYPE_DIGITAL"];
-var sensor_names = ["NONE","ULTRASONIC","COLOR"];
+var sensor_types = ["ANALOG","DIGITAL"];
+var sensor_names = ["NOSENSOR","ULTRASONIC","COLOR"];
 var sensor_version = [""]
 
 class SensorsAPI{
@@ -22,7 +22,7 @@ static getSensorInitType(){
 
 static getSensorInitName(){
 
-    return sensor_names[0];
+    return sensor_names[0].toLowerCase();
 }
 
 
